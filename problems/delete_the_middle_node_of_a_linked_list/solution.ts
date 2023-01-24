@@ -12,11 +12,11 @@
 
 function deleteMiddle(head: ListNode | null): ListNode | null {
     let node = head, counter = 0;
-    const getLast = (node: ListNode): ListNode => {
+    while(node) {
+        node = node.next;
         counter ++;
-        return (node.next)? getLast(node.next) : node;
     }
-    getLast(node);
+
     if(counter == 1) return null;
 
     counter = (counter % 2) ? counter / 2 - 0.5 : counter / 2;
