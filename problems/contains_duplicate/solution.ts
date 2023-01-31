@@ -1,8 +1,10 @@
 function containsDuplicate(nums: number[]): boolean {
-    const onlyUnique = (value, index, self): boolean => {
-        return self.indexOf(value) === index;
+    let set: Set<number> = new Set();
+    for (let i = 0; i < nums.length; i++) {
+        if (set.has(nums[i])) {
+            return true;
+        }
+        set.add(nums[i]);
     }
-    const unique = nums.filter(onlyUnique);
-
-    return nums.length != unique.length;
+    return false;
 };
