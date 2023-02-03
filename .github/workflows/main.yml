@@ -3,7 +3,7 @@ name: LeetCode Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 4 * * *'
     
 jobs:
   sync:
